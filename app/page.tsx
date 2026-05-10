@@ -485,7 +485,8 @@ export default function Home() {
                   Contact Me
                 </button>
                 <a
-                  href="/cv-nofrion-ridho.pdf"
+                  href="/CV_ Nofrion_Ridho.pdf"
+                  download="CV_Nofrion_Ridho.pdf"
                   className="px-7 py-3.5 rounded-xl font-semibold text-sm border border-slate-700/60 text-slate-400 hover:border-slate-500 hover:text-white transition-all duration-300 flex items-center gap-2"
                 >
                   <i className="fa-solid fa-download text-xs" />
@@ -549,7 +550,7 @@ export default function Home() {
             {[
               { value: "5+", label: "Projects Selesai", icon: "fa-solid fa-code-branch" },
               { value: "10", label: "Bulan PKL", icon: "fa-solid fa-building" },
-              { value: "10+", label: "Teknologi", icon: "fa-solid fa-layer-group" },
+              { value: "5+", label: "Teknologi", icon: "fa-solid fa-layer-group" },
             ].map((s) => (
               <div key={s.label} className="group">
                 <i className={`${s.icon} text-cyan-500/40 text-sm mb-3 block group-hover:text-cyan-400/60 transition-colors duration-300`} />
@@ -566,56 +567,75 @@ export default function Home() {
         <section id="about" className="relative z-10 px-6 lg:px-8 py-32">
           <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-            {/* Left: Image */}
-            <div className="relative">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/foto_diri2.jpeg"
-                  alt="Foto PKL Nofrion Ridho"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#010b17]/50 via-transparent to-transparent" />
+            {/* Left: Special Elements */}
+            <div className="relative h-full flex items-center justify-center">
+              {/* Background gradient circles */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl" />
+                <div className="absolute w-80 h-80 rounded-full bg-blue-500/5 blur-3xl" />
               </div>
 
-              {/* Floating info card */}
-              <div className="absolute -bottom-6 -right-6 glass-card border border-cyan-500/20 rounded-2xl p-5 shadow-2xl shadow-cyan-500/5 min-w-[170px]">
-                <div className="font-display text-2xl font-black text-cyan-400">10 Bln</div>
-                <div className="text-xs text-slate-500 mt-1">Pengalaman PKL</div>
-                <div className="text-xs text-slate-400 font-medium mt-0.5">PT. Inovasi Inti Digital</div>
-              </div>
+              {/* Main feature card */}
+              <div className="relative z-10 max-w-sm w-full space-y-6">
+                {/* Tech stack display */}
+                <div className="glass-card border border-cyan-500/20 rounded-2xl p-8 text-center">
+                  <div className="mb-6">
+                    <i className="fa-solid fa-code text-4xl text-cyan-400 mb-4 block" />
+                    <h3 className="font-semibold text-white mb-2">Full Stack Development</h3>
+                    <p className="text-xs text-slate-500">Backend • Frontend • Database</p>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3">
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                      <i className="fa-brands fa-laravel text-cyan-400 text-lg mb-1 block" />
+                      <span className="text-[10px] text-slate-400">Laravel</span>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                      <i className="fa-solid fa-database text-sky-400 text-lg mb-1 block" />
+                      <span className="text-[10px] text-slate-400">MySQL</span>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
+                      <i className="fa-solid fa-file-pdf text-blue-400 text-lg mb-1 block" />
+                      <span className="text-[10px] text-slate-400">PDF</span>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Corner accents */}
-              <div className="absolute -top-4 -left-4 w-14 h-14 border-t-2 border-l-2 border-cyan-500/25 rounded-tl-xl" />
+                {/* Experience highlight */}
+                <div className="glass-card border border-cyan-500/20 rounded-2xl p-6 text-center">
+                  <div className="text-3xl font-black text-cyan-400 mb-2">10 Bulan</div>
+                  <div className="text-sm text-slate-400 mb-1">Pengalaman PKL</div>
+                  <div className="text-xs text-cyan-400/70 font-medium">PT. Inovasi Inti Digital</div>
+                </div>
+              </div>
             </div>
 
             {/* Right: Content */}
             <div>
               <SectionLabel text="About Me" />
               <h2 className="font-display text-4xl font-black tracking-tight mb-6 leading-tight">
-                Seorang{" "}
+                Junior{" "}
                 <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
                   Developer
                 </span>{" "}
-                yang Passionate
+                &amp; UI Design Enthusiast
               </h2>
 
               <div className="space-y-4 text-slate-400 leading-relaxed mb-8 text-[15px]">
                 <p>
-                  Saya adalah lulusan{" "}
-                  <span className="text-white font-semibold">SMKN 1 Cibinong</span> jurusan Sistem Informasi
-                  Jaringan dan Aplikasi program 4 tahun.
-                </p>
-                <p>
-                  Memiliki pengalaman PKL selama{" "}
+                  Baru saja menyelesaikan pendidikan di{" "}
+                  <span className="text-white font-semibold">SMKN 1 Cibinong</span> dengan fokus pada pengembangan
+                  aplikasi dan jaringan. Melalui pengalaman magang{" "}
                   <span className="text-cyan-400 font-semibold">10 bulan</span> di{" "}
-                  <span className="text-white font-semibold">PT. Inovasi Inti Digital</span> sebagai Backend
-                  Developer, terbiasa mengembangkan sistem berbasis Laravel, CodeIgniter, MySQL, dan laporan PDF kompleks.
+                  <span className="text-white font-semibold">PT. Inovasi Inti Digital</span>, saya telah mengasah
+                  kemampuan dalam mengelola database{" "}
+                  <span className="text-cyan-400 font-semibold">MySQL</span>, logika backend dengan{" "}
+                  <span className="text-cyan-400 font-semibold">Laravel</span>, serta penyusunan laporan{" "}
+                  <span className="text-cyan-400 font-semibold">PDF yang kompleks</span>.
                 </p>
                 <p>
-                  Selain backend development, saya juga memiliki pengalaman dalam{" "}
-                  <span className="text-cyan-400 font-semibold">desain web interface</span> dan pembuatan{" "}
-                  <span className="text-cyan-400 font-semibold">desain poster</span> untuk kebutuhan internal perusahaan.
+                  Selain teknis coding, saya juga antusias dalam eksplorasi{" "}
+                  <span className="text-cyan-400 font-semibold">web interface</span> dan{" "}
+                  <span className="text-cyan-400 font-semibold">desain grafis</span> untuk solusi digital.
                 </p>
               </div>
 
@@ -624,7 +644,7 @@ export default function Home() {
                 {[
                   { icon: "fa-solid fa-school", label: "SMKN 1 Cibinong" },
                   { icon: "fa-solid fa-server", label: "Backend Developer" },
-                  { icon: "fa-solid fa-code", label: "Fullstack Dev" },
+                  { icon: "fa-solid fa-code", label: "Junior Web Developer" },
                   { icon: "fa-solid fa-pen-nib", label: "UI Designer" },
                   { icon: "fa-solid fa-file-pdf", label: "PDF Reporting" },
                 ].map((tag) => (
@@ -891,7 +911,8 @@ export default function Home() {
             {/* Download CV */}
             <div className="text-center">
               <a
-                href="/cv-nofrion-ridho.pdf"
+                href="/CV_ Nofrion_Ridho.pdf"
+                download="CV_Nofrion_Ridho.pdf"
                 className="group inline-flex items-center gap-3 relative overflow-hidden bg-gradient-to-r from-cyan-400 to-sky-400 text-[#010b17] px-10 py-4 rounded-xl font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20"
               >
                 <i className="fa-solid fa-download relative z-10" />
