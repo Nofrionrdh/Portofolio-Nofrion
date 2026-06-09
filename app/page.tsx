@@ -37,6 +37,7 @@ const schoolProjects = [
     image: "/images/project_ekskul.png",
     badge: "School Project",
     badgeIcon: "fa-solid fa-school",
+    github: "https://github.com/Nofrionrdh/Projek-XTRA",
   },
   {
     title: "Apotek Online",
@@ -46,6 +47,7 @@ const schoolProjects = [
     image: "/images/project_apotek.png",
     badge: "School Project",
     badgeIcon: "fa-solid fa-school",
+    github: "https://github.com/Nofrionrdh/Apotek-LSP",
   },
 ];
 
@@ -79,6 +81,52 @@ const internProjects = [
   },
 ];
 
+const certifications = [
+  {
+    title: "Data Analytics untuk Siswa SMA/Sederajat",
+    issuer: "Thematic Academy - Digital Talent Scholarship 2024",
+    date: "21-22 Oktober 2024",
+    hours: "18 Jam Pelatihan",
+    certId: "1949615850-82/TA/BLSDM.Kominfo/2024",
+    icon: "fa-solid fa-chart-line",
+    color: "from-purple-500 to-pink-600",
+  },
+  {
+    title: "TOEIC - Listening and Reading",
+    issuer: "Educational Testing Service (ETS)",
+    date: "Valid: Aug 2025 - Aug 2027",
+    score: "540 (Listening: 315 | Reading: 225)",
+    certId: "ID: 0067088056",
+    icon: "fa-solid fa-language",
+    color: "from-orange-500 to-red-600",
+    isScore: true,
+  },
+  {
+    title: "Docker Fundamental",
+    issuer: "Btech Academy",
+    date: "Maret 2025 - Maret 2027",
+    certId: "C01002-00000-36475",
+    icon: "fa-brands fa-docker",
+    color: "from-blue-500 to-cyan-600",
+  },
+  {
+    title: "Automation with Ansible",
+    issuer: "Btech Academy",
+    date: "Oktober 2025 - Oktober 2027",
+    certId: "C01003-00000-41750",
+    icon: "fa-solid fa-gears",
+    color: "from-red-500 to-orange-600",
+  },
+  {
+    title: "Linux System Administration",
+    issuer: "Btech Academy",
+    date: "Mei 2024 - Mei 2026",
+    certId: "C01001-00000-33415",
+    icon: "fa-brands fa-linux",
+    color: "from-amber-500 to-orange-600",
+  },
+];
+
 const contacts = [
   { label: "Email", faIcon: "fa-solid fa-envelope", value: "nofrionridho2006@email.com", href: "mailto:nofrionridho2006@email.com" },
   { label: "GitHub", faIcon: "fa-brands fa-github", value: "github.com/Nofrionrdh", href: "https://github.com/Nofrionrdh" },
@@ -107,9 +155,16 @@ function ProjectCard({
 }) {
   const [imageError, setImageError] = useState(false);
 
+  const handleCardClick = () => {
+    if (project.github) {
+      window.open(project.github, "_blank");
+    }
+  };
+
   return (
     <div
-      className="group relative bg-[#030e1c] border border-white/[0.06] rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-cyan-500/25 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500"
+      onClick={handleCardClick}
+      className="group relative bg-[#030e1c] border border-white/[0.06] rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-cyan-500/25 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 cursor-pointer"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image area */}
@@ -171,6 +226,66 @@ function ProjectCard({
   );
 }
 
+function CertificationCard({
+  cert,
+  index,
+}: {
+  cert: (typeof certifications)[0];
+  index: number;
+}) {
+  return (
+    <div
+      className="group relative bg-[#030e1c] border border-white/[0.06] rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-cyan-500/25 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 p-6"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      {/* Background gradient */}
+      <div className={`absolute -top-16 -right-16 w-40 h-40 bg-gradient-to-br ${cert.color} rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
+      
+      <div className="relative z-10">
+        {/* Icon */}
+        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-300`}>
+          <i className={`${cert.icon} text-white text-lg`} />
+        </div>
+
+        {/* Title */}
+        <h3 className="text-base font-bold mb-1 group-hover:text-cyan-400 transition-colors duration-300 leading-snug">
+          {cert.title}
+        </h3>
+
+        {/* Issuer */}
+        <p className="text-cyan-400/70 text-sm font-medium mb-3">{cert.issuer}</p>
+
+        {/* Details */}
+        <div className="space-y-2 text-sm text-slate-400 mb-4">
+          <div className="flex items-center gap-2">
+            <i className="fa-solid fa-calendar text-cyan-500/50 text-xs w-4" />
+            <span>{cert.date}</span>
+          </div>
+          {cert.hours && (
+            <div className="flex items-center gap-2">
+              <i className="fa-solid fa-clock text-cyan-500/50 text-xs w-4" />
+              <span>{cert.hours}</span>
+            </div>
+          )}
+          {cert.score && (
+            <div className="flex items-center gap-2">
+              <i className="fa-solid fa-trophy text-cyan-500/50 text-xs w-4" />
+              <span>{cert.score}</span>
+            </div>
+          )}
+          {/* <div className="flex items-center gap-2">
+            <i className="fa-solid fa-certificate text-cyan-500/50 text-xs w-4" />
+            <span className="font-mono text-[11px]">{cert.certId}</span>
+          </div> */}
+        </div>
+      </div>
+
+      {/* Bottom accent */}
+      <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/0 to-transparent group-hover:via-cyan-400/40 transition-all duration-500" />
+    </div>
+  );
+}
+
 // ─── MAIN ────────────────────────────────────────────────────────────────────────
 
 export default function Home() {
@@ -189,7 +304,7 @@ export default function Home() {
     };
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      const sections = ["home", "about", "skills", "experience", "projects", "design", "contact"];
+      const sections = ["home", "about", "skills", "experience", "projects", "certifications", "design", "contact"];
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 200) {
@@ -218,6 +333,7 @@ export default function Home() {
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
+    { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -728,7 +844,7 @@ export default function Home() {
                 <div className="bg-[#030e1c] border border-white/[0.05] rounded-2xl p-8 hover:border-cyan-500/15 transition-all duration-300">
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                     <div>
-                      <h3 className="font-display text-xl font-bold text-white mb-1">Backend Developer Intern</h3>
+                      <h3 className="font-display text-xl font-bold text-white mb-1">Web Developer Intern</h3>
                       <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
                         <i className="fa-solid fa-building text-xs" />
                         PT. Inovasi Inti Digital
@@ -818,6 +934,37 @@ export default function Home() {
                   <ProjectCard key={p.title} project={p} index={i} />
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            CERTIFICATIONS
+        ══════════════════════════════════════════════════════════ */}
+        <section id="certifications" className="relative z-10 px-6 lg:px-8 py-32">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <SectionLabel text="Pelatihan & Sertifikasi" />
+              <h2 className="font-display text-5xl font-black tracking-tight">
+                Professional{" "}
+                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
+                  Certifications
+                </span>
+              </h2>
+              <p className="text-slate-500 mt-4 max-w-xl mx-auto text-sm">
+                Sertifikasi dan pelatihan profesional dari berbagai institusi terpercaya.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max">
+              {certifications.slice(0, 3).map((cert, i) => (
+                <CertificationCard key={cert.title} cert={cert} index={i} />
+              ))}
+            </div>
+            <div className="flex justify-center gap-6 mt-6">
+              {certifications.slice(3).map((cert, i) => (
+                <CertificationCard key={cert.title} cert={cert} index={i + 3} />
+              ))}
             </div>
           </div>
         </section>
