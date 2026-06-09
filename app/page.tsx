@@ -150,13 +150,13 @@ function ProjectCard({
   project,
   index,
 }: {
-  project: (typeof schoolProjects)[0];
+  project: (typeof schoolProjects)[0] | (typeof internProjects)[0];
   index: number;
 }) {
   const [imageError, setImageError] = useState(false);
 
   const handleCardClick = () => {
-    if (project.github) {
+    if ("github" in project && project.github) {
       window.open(project.github, "_blank");
     }
   };
