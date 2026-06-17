@@ -8,22 +8,22 @@ import Image from "next/image";
 const skills = {
   "Backend Development": {
     faIcon: "fa-solid fa-server",
-    color: "from-cyan-500 to-blue-600",
+    color: "slate",
     items: ["PHP", "Laravel", "CodeIgniter", "MySQL", "REST API", "Database Design"],
   },
   "Frontend Development": {
     faIcon: "fa-solid fa-display",
-    color: "from-sky-400 to-cyan-500",
+    color: "slate",
     items: ["JavaScript", "HTML", "CSS", "Bootstrap", "Tailwind CSS", "Next.js"],
   },
   "Reporting & Business System": {
     faIcon: "fa-solid fa-chart-pie",
-    color: "from-blue-500 to-indigo-600",
+    color: "slate",
     items: ["FPDF", "Accounting Module", "Purchasing System", "Manufacturing System", "Inventory Flow"],
   },
   "Design & Tools": {
     faIcon: "fa-solid fa-pen-ruler",
-    color: "from-indigo-400 to-blue-500",
+    color: "slate",
     items: ["Git", "GitHub", "Linux", "UI Layout Design", "Poster Design", "Figma"],
   },
 };
@@ -33,7 +33,6 @@ const schoolProjects = [
     title: "Sistem Manajemen Ekstrakurikuler",
     desc: "Sistem berbasis Laravel dengan multi-role user (Admin, Pengurus, Pembina, dan Siswa) yang mendukung absensi, pendaftaran ekskul, LMS, validasi, dashboard, dan monitoring kegiatan ekstrakurikuler sekolah.",
     tags: ["Laravel", "Bootstrap", "MySQL", "JavaScript", "PHP"],
-    gradient: "from-sky-400 via-cyan-500 to-blue-600",
     image: "/images/project_ekskul.png",
     badge: "School Project",
     badgeIcon: "fa-solid fa-school",
@@ -43,7 +42,6 @@ const schoolProjects = [
     title: "Apotek Online",
     desc: "Sistem penjualan obat berbasis web yang mendukung pengelolaan produk, transaksi pembelian, penjualan, stok barang, dan laporan transaksi.",
     tags: ["Laravel", "Bootstrap", "MySQL", "JavaScript", "PHP"],
-    gradient: "from-teal-400 via-cyan-500 to-sky-600",
     image: "/images/project_apotek.png",
     badge: "School Project",
     badgeIcon: "fa-solid fa-school",
@@ -56,7 +54,6 @@ const internProjects = [
     title: "Sistem Aqiqah",
     desc: "Aplikasi berbasis CodeIgniter untuk pengelolaan penjualan aqiqah, produksi, pembelian, stok kambing, pengiriman pesanan, serta laporan PDF operasional harian.",
     tags: ["CodeIgniter", "MySQL", "FPDF"],
-    gradient: "from-blue-500 via-indigo-500 to-blue-700",
     image: "/images/aqiqah.png",
     badge: "PKL Project",
     badgeIcon: "fa-solid fa-briefcase",
@@ -65,7 +62,6 @@ const internProjects = [
     title: "Accounting & Reporting System",
     desc: "Pengembangan modul akuntansi seperti jurnal umum, posting, closing, arus kas, laporan aktivitas, serta berbagai laporan PDF kompleks menggunakan FPDF.",
     tags: ["CodeIgniter", "MySQL", "FPDF"],
-    gradient: "from-cyan-500 via-sky-500 to-blue-600",
     image: "/images/acc.png",
     badge: "PKL Project",
     badgeIcon: "fa-solid fa-briefcase",
@@ -74,7 +70,6 @@ const internProjects = [
     title: "Manufacturing Module",
     desc: "Modul manufaktur untuk proses produksi seperti painting, work order, purchasing bahan, tracking proses produksi, serta integrasi antar divisi.",
     tags: ["CodeIgniter", "MySQL", "FPDF"],
-    gradient: "from-indigo-500 via-blue-500 to-cyan-600",
     image: "/images/manufaktur.png",
     badge: "PKL Project",
     badgeIcon: "fa-solid fa-briefcase",
@@ -89,7 +84,6 @@ const certifications = [
     hours: "18 Jam Pelatihan",
     certId: "1949615850-82/TA/BLSDM.Kominfo/2024",
     icon: "fa-solid fa-chart-line",
-    color: "from-purple-500 to-pink-600",
   },
   {
     title: "TOEIC - Listening and Reading",
@@ -98,7 +92,6 @@ const certifications = [
     score: "540 (Listening: 315 | Reading: 225)",
     certId: "ID: 0067088056",
     icon: "fa-solid fa-language",
-    color: "from-orange-500 to-red-600",
     isScore: true,
   },
   {
@@ -107,7 +100,6 @@ const certifications = [
     date: "Maret 2025 - Maret 2027",
     certId: "C01002-00000-36475",
     icon: "fa-brands fa-docker",
-    color: "from-blue-500 to-cyan-600",
   },
   {
     title: "Automation with Ansible",
@@ -115,7 +107,6 @@ const certifications = [
     date: "Oktober 2025 - Oktober 2027",
     certId: "C01003-00000-41750",
     icon: "fa-solid fa-gears",
-    color: "from-red-500 to-orange-600",
   },
   {
     title: "Linux System Administration",
@@ -123,7 +114,17 @@ const certifications = [
     date: "Mei 2024 - Mei 2026",
     certId: "C01001-00000-33415",
     icon: "fa-brands fa-linux",
-    color: "from-amber-500 to-orange-600",
+  },
+];
+
+const education = [
+  {
+    school: "SMK Negeri 1 Cibinong",
+    major: "Sistem Informasi Jaringan dan Aplikasi (SIJA)",
+    description: "Selama masa pendidikan kejuruan, saya mengembangkan keahlian yang komprehensif di bidang pengembangan perangkat lunak dan infrastruktur IT. Saya mendapatkan pengalaman praktis dalam membangun aplikasi web menggunakan PHP, Laravel, JavaScript, CSS, dan Bootstrap. Selain pemrograman, saya mendalami DevOps dan operasi sistem dengan meraih sertifikasi dalam Administrasi Sistem Linux dan Docker, serta mempelajari otomatisasi server menggunakan Ansible. Di samping itu, saya juga mempelajari jaringan komputer dengan fokus pada konfigurasi dan manajemen infrastruktur menggunakan perangkat MikroTik dan Cisco.",
+    icon: "fa-solid fa-school",
+    years: "2022 - 2026",
+    skills: ["PHP", "Laravel", "CodeIgniter", "JavaScript", "Bootstrap", "MySQL", "Linux", "Docker", "Ansible", "MikroTik", "Cisco"],
   },
 ];
 
@@ -138,10 +139,8 @@ const contacts = [
 
 function SectionLabel({ text }: { text: string }) {
   return (
-    <div className="flex items-center justify-center gap-3 mb-4">
-      <span className="w-10 h-px bg-cyan-500/50" />
-      <span className="text-cyan-400 text-[11px] font-bold tracking-[0.25em] uppercase">{text}</span>
-      <span className="w-10 h-px bg-cyan-500/50" />
+    <div className="text-center mb-6">
+      <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">{text}</span>
     </div>
   );
 }
@@ -164,60 +163,100 @@ function ProjectCard({
   return (
     <div
       onClick={handleCardClick}
-      className="group relative bg-[#030e1c] border border-white/[0.06] rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-cyan-500/25 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 cursor-pointer"
+      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-black/50 hover:border-gray-600 transition-all duration-300 cursor-pointer"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       {/* Image area */}
-      <div className={`relative h-52 bg-gradient-to-br ${project.gradient} overflow-hidden`}>
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)",
-            backgroundSize: "20px 20px",
-          }}
-        />
-        <div className="absolute inset-0 bg-black/20" />
-
+      <div className="relative h-48 bg-gray-700/50 overflow-hidden">
         {!imageError && project.image ? (
           <Image
             src={project.image}
             alt={project.title}
             fill
-            className="object-cover"
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
             onError={() => setImageError(true)}
           />
         ) : (
-          <div className="absolute inset-4 rounded-xl border border-white/20 bg-black/30 flex items-center justify-center">
+          <div className="absolute inset-4 rounded-lg border border-gray-600 bg-gray-800/80 flex items-center justify-center">
             <div className="text-center">
-              <i className="fa-solid fa-image text-white/30 text-4xl mb-2 block" />
-              <p className="text-white/40 text-xs">Screenshot belum tersedia</p>
+              <i className="fa-solid fa-image text-gray-600 text-3xl mb-2 block" />
+              <p className="text-gray-500 text-xs">Screenshot belum tersedia</p>
             </div>
           </div>
         )}
 
         {/* Badge */}
-        <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[10px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+        <div className="absolute top-3 right-3 bg-gray-900/80 border border-gray-700 text-gray-300 text-[10px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
           <i className={`${project.badgeIcon} text-[9px]`} />
           {project.badge}
         </div>
       </div>
 
-      {/* Hover glow line */}
-      <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/0 to-transparent group-hover:via-cyan-400/40 transition-all duration-500" />
-
-      <div className="p-6">
-        <h3 className="text-base font-bold mb-2 group-hover:text-cyan-400 transition-colors duration-300 leading-snug">
+      <div className="p-5">
+        <h3 className="text-base font-bold mb-2 group-hover:text-white text-white transition-colors duration-300 leading-snug">
           {project.title}
         </h3>
-        <p className="text-slate-500 text-sm leading-relaxed mb-4">{project.desc}</p>
+        <p className="text-gray-300 text-sm leading-relaxed mb-4">{project.desc}</p>
         <div className="flex gap-2 flex-wrap">
           {project.tags.map((t) => (
             <span
               key={t}
-              className="bg-cyan-500/8 border border-cyan-500/15 text-cyan-400/80 px-2.5 py-0.5 rounded-md text-[11px] font-medium tracking-wide"
+              className="bg-gray-700/50 border border-gray-600 text-gray-300 px-2.5 py-0.5 rounded text-[11px] font-medium"
             >
               {t}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function EducationCard({
+  edu,
+  index,
+}: {
+  edu: (typeof education)[0];
+  index: number;
+}) {
+  return (
+    <div
+      className={`group bg-gradient-to-br from-amber-500/10 to-transparent border border-amber-600/50 rounded-lg p-8 hover:shadow-lg hover:shadow-amber-500/20 hover:border-amber-500 transition-all duration-300 ${
+        index % 2 === 0 ? "md:col-span-1" : "md:col-span-1"
+      }`}
+    >
+      {/* School & Major */}
+      <div className="flex items-start justify-between mb-6 gap-4">
+        <div className="flex-1">
+          <h3 className="text-xl font-bold text-white mb-1">{edu.school}</h3>
+          <p className="text-amber-400 font-semibold text-sm">{edu.major}</p>
+        </div>
+        <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-500/30 transition-all duration-300">
+          <i className={`${edu.icon} text-amber-400 text-base`} />
+        </div>
+      </div>
+
+      {/* Years */}
+      <div className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-6 pb-6 border-b border-gray-700/50">
+        <i className="fa-regular fa-calendar text-amber-400 text-xs" />
+        {edu.years}
+      </div>
+
+      {/* Description */}
+      <p className="text-gray-300 leading-relaxed text-base mb-6">
+        {edu.description}
+      </p>
+
+      {/* Skills */}
+      <div>
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Keahlian yang dikuasai</p>
+        <div className="flex flex-wrap gap-2">
+          {edu.skills.map((skill) => (
+            <span
+              key={skill}
+              className="bg-amber-500/15 text-amber-300 text-xs px-3 py-1.5 rounded-full border border-amber-600/40 group-hover:border-amber-500/60 group-hover:bg-amber-500/25 transition-all duration-200"
+            >
+              {skill}
             </span>
           ))}
         </div>
@@ -235,53 +274,43 @@ function CertificationCard({
 }) {
   return (
     <div
-      className="group relative bg-[#030e1c] border border-white/[0.06] rounded-2xl overflow-hidden hover:-translate-y-2 hover:border-cyan-500/25 hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500 p-6"
+      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300 p-6"
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      {/* Background gradient */}
-      <div className={`absolute -top-16 -right-16 w-40 h-40 bg-gradient-to-br ${cert.color} rounded-full opacity-5 group-hover:opacity-10 transition-opacity duration-500`} />
-      
       <div className="relative z-10">
         {/* Icon */}
-        <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${cert.color} flex items-center justify-center mb-4 shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-300`}>
-          <i className={`${cert.icon} text-white text-lg`} />
+        <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors duration-300">
+          <i className={`${cert.icon} text-amber-400 text-base`} />
         </div>
 
         {/* Title */}
-        <h3 className="text-base font-bold mb-1 group-hover:text-cyan-400 transition-colors duration-300 leading-snug">
+        <h3 className="text-base font-bold mb-1 group-hover:text-white transition-colors duration-300 leading-snug text-white">
           {cert.title}
         </h3>
 
         {/* Issuer */}
-        <p className="text-cyan-400/70 text-sm font-medium mb-3">{cert.issuer}</p>
+        <p className="text-gray-400 text-sm font-medium mb-3">{cert.issuer}</p>
 
         {/* Details */}
-        <div className="space-y-2 text-sm text-slate-400 mb-4">
+        <div className="space-y-2 text-sm text-gray-400 mb-4">
           <div className="flex items-center gap-2">
-            <i className="fa-solid fa-calendar text-cyan-500/50 text-xs w-4" />
+            <i className="fa-solid fa-calendar text-gray-500 text-xs w-4" />
             <span>{cert.date}</span>
           </div>
           {cert.hours && (
             <div className="flex items-center gap-2">
-              <i className="fa-solid fa-clock text-cyan-500/50 text-xs w-4" />
+              <i className="fa-solid fa-clock text-gray-500 text-xs w-4" />
               <span>{cert.hours}</span>
             </div>
           )}
           {cert.score && (
             <div className="flex items-center gap-2">
-              <i className="fa-solid fa-trophy text-cyan-500/50 text-xs w-4" />
+              <i className="fa-solid fa-trophy text-gray-500 text-xs w-4" />
               <span>{cert.score}</span>
             </div>
           )}
-          {/* <div className="flex items-center gap-2">
-            <i className="fa-solid fa-certificate text-cyan-500/50 text-xs w-4" />
-            <span className="font-mono text-[11px]">{cert.certId}</span>
-          </div> */}
         </div>
       </div>
-
-      {/* Bottom accent */}
-      <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/0 to-transparent group-hover:via-cyan-400/40 transition-all duration-500" />
     </div>
   );
 }
@@ -290,21 +319,15 @@ function CertificationCard({
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
-  const [mouseX, setMouseX] = useState(0);
-  const [mouseY, setMouseY] = useState(0);
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
-    const handleMouse = (e: MouseEvent) => {
-      setMouseX(e.clientX);
-      setMouseY(e.clientY);
-    };
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      const sections = ["home", "about", "skills", "experience", "projects", "certifications", "design", "contact"];
+      const sections = ["home", "education", "certifications", "skills", "experience", "projects", "contact"];
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 200) {
@@ -313,11 +336,9 @@ export default function Home() {
         }
       }
     };
-    window.addEventListener("mousemove", handleMouse);
     window.addEventListener("scroll", handleScroll);
     return () => {
       clearTimeout(timer);
-      window.removeEventListener("mousemove", handleMouse);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -329,11 +350,10 @@ export default function Home() {
 
   const navItems = [
     { id: "home", label: "Home" },
-    { id: "about", label: "About" },
+    { id: "education", label: "Education" },
+    { id: "certifications", label: "Certifications" },
     { id: "skills", label: "Skills" },
     { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
   ];
 
@@ -345,117 +365,46 @@ export default function Home() {
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossOrigin="anonymous"
       />
-      {/* Google Fonts — Plus Jakarta Sans */}
+      {/* Google Fonts — Inter */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
       />
 
       <style>{`
-        body, .font-display { font-family: 'Plus Jakarta Sans', sans-serif; }
-
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        @keyframes spin-slow-rev {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(-360deg); }
-        }
-        @keyframes pulse-ring {
-          0% { transform: scale(1); opacity: 0.4; }
-          100% { transform: scale(1.4); opacity: 0; }
-        }
-        .animate-float { animation: float-slow 6s ease-in-out infinite; }
-        .animate-spin-slow { animation: spin-slow 22s linear infinite; }
-        .animate-spin-slow-rev { animation: spin-slow-rev 32s linear infinite; }
-        .badge-float-1 { animation: float-slow 5s ease-in-out infinite; }
-        .badge-float-2 { animation: float-slow 7s ease-in-out infinite 1s; }
-        .badge-float-3 { animation: float-slow 6s ease-in-out infinite 2s; }
+        body, html { font-family: 'Inter', sans-serif; }
 
         .nav-pill::after {
           content: '';
           position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 4px;
-          height: 4px;
-          border-radius: 9999px;
-          background: #22d3ee;
+          bottom: -4px;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background: #1f2937;
           opacity: 0;
           transition: opacity 0.2s;
         }
         .nav-pill.active::after { opacity: 1; }
-
-        .skill-card:hover .skill-icon-wrap { transform: scale(1.1) rotate(-5deg); }
-
-        .timeline-dot::before {
-          content: '';
-          position: absolute;
-          inset: -4px;
-          border-radius: 9999px;
-          border: 2px solid #22d3ee;
-          animation: pulse-ring 2s ease-out infinite;
-        }
-
-        .glass-card {
-          background: rgba(3, 14, 28, 0.8);
-          backdrop-filter: blur(12px);
-        }
       `}</style>
 
-      <main className="min-h-screen bg-[#010b17] text-white overflow-x-hidden" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-
-        {/* ── CURSOR GLOW ── */}
-        <div
-          className="pointer-events-none fixed z-0 w-[700px] h-[700px] rounded-full opacity-[0.10] blur-3xl"
-          style={{
-            background: "radial-gradient(circle, #22d3ee 0%, #3b82f6 40%, transparent 70%)",
-            left: mouseX - 350,
-            top: mouseY - 350,
-            transition: "left 0.15s ease, top 0.15s ease",
-          }}
-        />
-
-        {/* ── BACKGROUND ── */}
-        <div className="pointer-events-none fixed inset-0 z-0">
-          <div
-            className="absolute inset-0 opacity-[0.025]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(34,211,238,1) 1px, transparent 1px), linear-gradient(90deg, rgba(34,211,238,1) 1px, transparent 1px)",
-              backgroundSize: "64px 64px",
-            }}
-          />
-          <div className="absolute -top-72 -left-72 w-[800px] h-[800px] rounded-full bg-cyan-900/20 blur-[160px]" />
-          <div className="absolute top-1/3 -right-80 w-[600px] h-[600px] rounded-full bg-blue-900/15 blur-[140px]" />
-          <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full bg-sky-900/10 blur-[120px]" />
-        </div>
+      <main className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900 text-white overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
 
         {/* ── NAVBAR ── */}
         <nav
-          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             scrolled
-              ? "bg-[#010b17]/85 backdrop-blur-2xl border-b border-cyan-500/8 shadow-2xl shadow-black/30"
+              ? "bg-gray-950/80 backdrop-blur-md border-b border-gray-700 shadow-lg"
               : "bg-transparent"
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
             {/* Logo */}
-            <button onClick={() => scrollTo("home")} className="flex items-center gap-3 group">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20 group-hover:shadow-cyan-500/40 transition-shadow duration-300">
-                <span className="font-display text-sm font-black text-[#010b17]">N</span>
-              </div>
-              <span className="font-display font-bold text-base tracking-tight">
-                <span className="text-cyan-400">Nofrion</span>
-                <span className="text-white"> Ridho</span>
+            <button onClick={() => scrollTo("home")} className="flex items-center gap-2 group">
+              <span className="font-bold text-xl">
+                <span className="text-amber-700">Nofrion</span>
               </span>
             </button>
 
@@ -465,10 +414,10 @@ export default function Home() {
                 <li key={item.id}>
                   <button
                     onClick={() => scrollTo(item.id)}
-                    className={`relative nav-pill px-4 py-2 rounded-lg transition-all duration-200 font-medium ${
+                    className={`relative nav-pill px-4 py-2 rounded transition-colors duration-200 font-medium text-sm ${
                       activeSection === item.id
-                        ? "text-cyan-400 bg-cyan-400/8 active"
-                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                        ? "text-amber-400 active"
+                        : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {item.label}
@@ -480,11 +429,10 @@ export default function Home() {
             {/* Desktop CTA */}
             <button
               onClick={() => scrollTo("contact")}
-              className="hidden md:flex items-center gap-2 relative overflow-hidden bg-cyan-400 text-[#010b17] px-5 py-2.5 rounded-xl font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20 group"
+              className="hidden md:flex items-center gap-2 relative overflow-hidden bg-amber-600 text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300"
             >
-              <i className="fa-solid fa-paper-plane text-xs relative z-10" />
-              <span className="relative z-10">Hire Me</span>
-              <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <i className="fa-solid fa-paper-plane text-xs" />
+              <span>Hire Me</span>
             </button>
 
             {/* Mobile hamburger */}
@@ -492,21 +440,21 @@ export default function Home() {
               className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              <span className={`w-5 h-px bg-slate-400 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
-              <span className={`w-5 h-px bg-slate-400 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-              <span className={`w-5 h-px bg-slate-400 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
+              <span className={`w-5 h-px bg-gray-300 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[3px]" : ""}`} />
+              <span className={`w-5 h-px bg-gray-300 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+              <span className={`w-5 h-px bg-gray-300 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[3px]" : ""}`} />
             </button>
           </div>
 
           {/* Mobile menu */}
-          <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-80 border-b border-white/5" : "max-h-0"}`}>
-            <div className="px-6 pb-4 space-y-1 bg-[#010b17]/95 backdrop-blur-xl">
+          <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-80 border-b border-gray-700" : "max-h-0"}`}>
+            <div className="px-6 pb-4 space-y-1 bg-gray-800/50">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
-                  className={`block w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                    activeSection === item.id ? "text-cyan-400 bg-cyan-400/8" : "text-slate-400 hover:text-white"
+                  className={`block w-full text-left px-4 py-2.5 rounded text-sm font-medium transition-colors ${
+                    activeSection === item.id ? "text-amber-400 bg-amber-900/20" : "text-gray-300 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -526,27 +474,25 @@ export default function Home() {
             <div>
               {/* Status badge */}
               <div
-                className={`mb-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-sm transition-all duration-700 ${
+                className={`mb-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-amber-500/50 bg-amber-500/10 text-amber-400 text-sm transition-all duration-700 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
                 </span>
                 Available for work
               </div>
 
               {/* Name */}
               <h1
-                className={`font-display text-5xl md:text-7xl lg:text-[82px] font-black tracking-tight mb-4 leading-[0.95] transition-all duration-700 delay-100 ${
+                className={`text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-tight transition-all duration-700 delay-100 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
                 <span className="text-white block">Nofrion</span>
-                <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-400 bg-clip-text text-transparent block">
-                  Ridho
-                </span>
+                <span className="text-white block">Ridho</span>
               </h1>
 
               {/* Role */}
@@ -555,27 +501,20 @@ export default function Home() {
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
-                <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-sky-400 uppercase">
-                  <span className="w-6 h-px bg-sky-400/60" />
+                <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-amber-400 uppercase">
                   Backend &amp; Fullstack Developer
-                  <span className="w-6 h-px bg-sky-400/60" />
                 </span>
               </div>
 
               {/* Description */}
               <p
-                className={`max-w-lg text-slate-400 text-[17px] leading-relaxed mb-10 transition-all duration-700 delay-300 ${
+                className={`max-w-lg text-gray-300 text-base leading-relaxed mb-10 transition-all duration-700 delay-300 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
-                Saya adalah fresh graduate SMK jurusan Sistem Informasi Jaringan dan Aplikasi
-                yang memiliki minat besar di bidang{" "}
-                <span className="text-cyan-400 font-semibold">Pengembangan Website</span>.
-                Saya terbiasa menggunakan{" "}
-                <span className="text-cyan-400 font-semibold">Laravel</span>,{" "}
-                <span className="text-cyan-400 font-semibold">CodeIgniter</span>, dan{" "}
-                <span className="text-cyan-400 font-semibold">PHP</span>{" "}
-                dalam pembuatan sistem berbasis web.
+                Fresh graduate dari SMK Jurusan Sistem Informasi Jaringan & Aplikasi dengan passion
+                pada pengembangan web. Berpengalaman dengan{" "}
+                <span className="text-amber-400 font-semibold">Laravel</span>, <span className="text-amber-400 font-semibold">CodeIgniter</span>, dan <span className="text-amber-400 font-semibold">PHP</span>.
               </p>
 
               {/* Buttons */}
@@ -586,26 +525,24 @@ export default function Home() {
               >
                 <button
                   onClick={() => scrollTo("projects")}
-                  className="group relative overflow-hidden bg-cyan-400 text-[#010b17] px-7 py-3.5 rounded-xl font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/25 flex items-center gap-2"
+                  className="group relative overflow-hidden bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300 flex items-center gap-2"
                 >
-                  <i className="fa-solid fa-folder-open text-xs relative z-10" />
-                  <span className="relative z-10">Lihat Project</span>
-                  <i className="fa-solid fa-arrow-right text-xs relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-                  <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <i className="fa-solid fa-folder-open text-sm" />
+                  <span>Lihat Project</span>
                 </button>
                 <button
                   onClick={() => scrollTo("contact")}
-                  className="px-7 py-3.5 rounded-xl font-semibold text-sm border border-cyan-500/30 text-slate-300 hover:border-cyan-400 hover:text-cyan-400 hover:bg-cyan-400/5 transition-all duration-300 flex items-center gap-2"
+                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
                 >
-                  <i className="fa-solid fa-message text-xs" />
+                  <i className="fa-solid fa-message text-sm" />
                   Contact Me
                 </button>
                 <a
                   href="/CV_ Nofrion_Ridho.pdf"
                   download="CV_Nofrion_Ridho.pdf"
-                  className="px-7 py-3.5 rounded-xl font-semibold text-sm border border-slate-700/60 text-slate-400 hover:border-slate-500 hover:text-white transition-all duration-300 flex items-center gap-2"
+                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
                 >
-                  <i className="fa-solid fa-download text-xs" />
+                  <i className="fa-solid fa-download text-sm" />
                   Download CV
                 </a>
               </div>
@@ -617,51 +554,21 @@ export default function Home() {
                 loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
-              {/* Decorative rings */}
-              <div className="absolute w-[360px] h-[360px] rounded-full border border-cyan-500/10 animate-spin-slow" />
-              <div className="absolute w-[430px] h-[430px] rounded-full border border-cyan-500/5 animate-spin-slow-rev" />
-
-              {/* Glow */}
-              <div className="absolute w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl" />
-
               {/* Profile picture */}
-              <div className="animate-float relative w-72 h-72 rounded-3xl overflow-hidden border border-cyan-500/20 shadow-2xl shadow-cyan-500/15">
+              <div className="relative w-64 h-64 rounded-2xl overflow-hidden border border-gray-700 shadow-lg shadow-black/50">
                 <Image
                   src="/images/foto_diri3.jpeg"
                   alt="Foto Profil Nofrion Ridho"
                   fill
                   className="object-cover"
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#010b17]/40 via-transparent to-transparent" />
-              </div>
-
-              {/* Floating skill badges */}
-              <div className="badge-float-1 absolute -left-5 top-14 glass-card border border-cyan-500/20 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-cyan-400 shadow-xl flex items-center gap-2">
-                <i className="fa-brands fa-laravel text-sm" />
-                Laravel Dev
-              </div>
-              <div className="badge-float-2 absolute -right-5 top-24 glass-card border border-cyan-500/20 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-sky-400 shadow-xl flex items-center gap-2">
-                <i className="fa-solid fa-database text-xs" />
-                MySQL
-              </div>
-              <div className="badge-float-3 absolute -left-8 bottom-20 glass-card border border-cyan-500/20 rounded-xl px-3.5 py-2.5 text-xs font-semibold text-blue-400 shadow-xl flex items-center gap-2">
-                <i className="fa-solid fa-file-pdf text-xs" />
-                PDF Reports
               </div>
             </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-600">
-            <span className="tracking-[0.2em] uppercase text-[9px] font-medium">Scroll</span>
-            <div className="w-px h-10 bg-gradient-to-b from-cyan-500/40 to-transparent animate-pulse" />
-            <i className="fa-solid fa-chevron-down text-[10px] text-cyan-500/40 animate-bounce" />
           </div>
         </section>
 
         {/* ── STATS BAR ── */}
-        <div className="relative z-10 border-y border-white/[0.04] bg-white/[0.015] py-10 px-6">
+        <div className="relative z-10 border-y border-gray-700 bg-gray-800/50 py-10 px-6">
           <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
             {[
               { value: "5+", label: "Projects Selesai", icon: "fa-solid fa-code-branch" },
@@ -669,271 +576,29 @@ export default function Home() {
               { value: "5+", label: "Teknologi", icon: "fa-solid fa-layer-group" },
             ].map((s) => (
               <div key={s.label} className="group">
-                <i className={`${s.icon} text-cyan-500/40 text-sm mb-3 block group-hover:text-cyan-400/60 transition-colors duration-300`} />
-                <div className="font-display text-3xl font-black text-cyan-400 group-hover:scale-110 transition-transform duration-300">{s.value}</div>
-                <div className="text-xs text-slate-500 mt-1.5 tracking-wide">{s.label}</div>
+                <i className={`${s.icon} text-amber-400 text-sm mb-3 block`} />
+                <div className="text-3xl font-bold text-white">{s.value}</div>
+                <div className="text-xs text-gray-400 mt-1.5 tracking-wide uppercase">{s.label}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* ══════════════════════════════════════════════════════════
-            ABOUT ME
+            EDUCATION
         ══════════════════════════════════════════════════════════ */}
-        <section id="about" className="relative z-10 px-6 lg:px-8 py-32">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-
-            {/* Left: Special Elements */}
-            <div className="relative h-full flex items-center justify-center">
-              {/* Background gradient circles */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="absolute w-96 h-96 rounded-full bg-cyan-500/5 blur-3xl" />
-                <div className="absolute w-80 h-80 rounded-full bg-blue-500/5 blur-3xl" />
-              </div>
-
-              {/* Main feature card */}
-              <div className="relative z-10 max-w-sm w-full space-y-6">
-                {/* Tech stack display */}
-                <div className="glass-card border border-cyan-500/20 rounded-2xl p-8 text-center">
-                  <div className="mb-6">
-                    <i className="fa-solid fa-code text-4xl text-cyan-400 mb-4 block" />
-                    <h3 className="font-semibold text-white mb-2">Full Stack Development</h3>
-                    <p className="text-xs text-slate-500">Backend • Frontend • Database</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-3">
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                      <i className="fa-brands fa-laravel text-cyan-400 text-lg mb-1 block" />
-                      <span className="text-[10px] text-slate-400">Laravel</span>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                      <i className="fa-solid fa-database text-sky-400 text-lg mb-1 block" />
-                      <span className="text-[10px] text-slate-400">MySQL</span>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/10">
-                      <i className="fa-solid fa-file-pdf text-blue-400 text-lg mb-1 block" />
-                      <span className="text-[10px] text-slate-400">PDF</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Experience highlight */}
-                <div className="glass-card border border-cyan-500/20 rounded-2xl p-6 text-center">
-                  <div className="text-3xl font-black text-cyan-400 mb-2">10 Bulan</div>
-                  <div className="text-sm text-slate-400 mb-1">Pengalaman PKL</div>
-                  <div className="text-xs text-cyan-400/70 font-medium">PT. Inovasi Inti Digital</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Content */}
-            <div>
-              <SectionLabel text="About Me" />
-              <h2 className="font-display text-4xl font-black tracking-tight mb-6 leading-tight">
-                Junior{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Developer
-                </span>{" "}
-                &amp; UI Design Enthusiast
-              </h2>
-
-              <div className="space-y-4 text-slate-400 leading-relaxed mb-8 text-[15px]">
-                <p>
-                  Baru saja menyelesaikan pendidikan di{" "}
-                  <span className="text-white font-semibold">SMKN 1 Cibinong</span> dengan fokus pada pengembangan
-                  aplikasi dan jaringan. Melalui pengalaman magang{" "}
-                  <span className="text-cyan-400 font-semibold">10 bulan</span> di{" "}
-                  <span className="text-white font-semibold">PT. Inovasi Inti Digital</span>, saya telah mengasah
-                  kemampuan dalam mengelola database{" "}
-                  <span className="text-cyan-400 font-semibold">MySQL</span>, logika backend dengan{" "}
-                  <span className="text-cyan-400 font-semibold">Laravel</span>, serta penyusunan laporan{" "}
-                  <span className="text-cyan-400 font-semibold">PDF yang kompleks</span>.
-                </p>
-                <p>
-                  Selain teknis coding, saya juga antusias dalam eksplorasi{" "}
-                  <span className="text-cyan-400 font-semibold">web interface</span> dan{" "}
-                  <span className="text-cyan-400 font-semibold">desain grafis</span> untuk solusi digital.
-                </p>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {[
-                  { icon: "fa-solid fa-school", label: "SMKN 1 Cibinong" },
-                  { icon: "fa-solid fa-server", label: "Backend Developer" },
-                  { icon: "fa-solid fa-code", label: "Junior Web Developer" },
-                  { icon: "fa-solid fa-pen-nib", label: "UI Designer" },
-                  { icon: "fa-solid fa-file-pdf", label: "PDF Reporting" },
-                ].map((tag) => (
-                  <span
-                    key={tag.label}
-                    className="inline-flex items-center gap-2 bg-white/[0.04] border border-white/[0.08] text-slate-300 px-4 py-2 rounded-full text-sm font-medium hover:border-cyan-500/30 hover:text-cyan-400 transition-colors duration-200"
-                  >
-                    <i className={`${tag.icon} text-xs opacity-60`} />
-                    {tag.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            SKILLS
-        ══════════════════════════════════════════════════════════ */}
-        <section id="skills" className="relative z-10 px-6 lg:px-8 py-32">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <SectionLabel text="Keahlian" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                Tech{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Stack
-                </span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-              {Object.entries(skills).map(([category, { faIcon, color, items }]) => (
-                <div
-                  key={category}
-                  className="skill-card group bg-[#030e1c] border border-white/[0.05] rounded-2xl p-6 hover:border-cyan-500/20 hover:-translate-y-1.5 transition-all duration-300"
-                >
-                  <div className={`skill-icon-wrap w-11 h-11 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center mb-5 shadow-lg transition-transform duration-300`}>
-                    <i className={`${faIcon} text-white text-base`} />
-                  </div>
-                  <h3 className="font-semibold text-sm text-white mb-4 leading-snug">{category}</h3>
-                  <div className="flex flex-wrap gap-1.5">
-                    {items.map((skill) => (
-                      <span
-                        key={skill}
-                        className="bg-white/[0.04] text-slate-400 text-[11px] px-2.5 py-1 rounded-md border border-white/[0.05] group-hover:border-cyan-500/10 group-hover:text-slate-300 transition-all duration-200"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            EXPERIENCE
-        ══════════════════════════════════════════════════════════ */}
-        <section id="experience" className="relative z-10 px-6 lg:px-8 py-32">
+        <section id="education" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-gray-800/50 to-transparent">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <SectionLabel text="Pengalaman" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                My{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Experience
-                </span>
-              </h2>
+              <SectionLabel text="Pendidikan" />
+              <h2 className="text-5xl font-bold tracking-tight text-white">My Education</h2>
             </div>
 
-            {/* Timeline */}
-            <div className="relative">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-cyan-500/20 to-transparent" />
-
-              <div className="relative pl-16">
-                {/* Timeline dot */}
-                <div className="timeline-dot absolute left-[18px] top-9 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[#010b17] shadow-lg shadow-cyan-400/50" />
-
-                <div className="bg-[#030e1c] border border-white/[0.05] rounded-2xl p-8 hover:border-cyan-500/15 transition-all duration-300">
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
-                    <div>
-                      <h3 className="font-display text-xl font-bold text-white mb-1">Web Developer Intern</h3>
-                      <div className="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
-                        <i className="fa-solid fa-building text-xs" />
-                        PT. Inovasi Inti Digital
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-semibold px-4 py-2 rounded-full">
-                      <i className="fa-regular fa-clock text-xs" />
-                      10 Bulan PKL
-                    </div>
-                  </div>
-
-                  <p className="text-slate-400 leading-relaxed mb-6 text-[15px]">
-                    Mengembangkan berbagai sistem bisnis berbasis CodeIgniter seperti modul accounting,
-                    purchasing, manufaktur, pengiriman, dan reporting PDF operasional perusahaan. Selain
-                    pengembangan backend, juga terlibat dalam pembuatan desain tampilan website dan desain
-                    poster untuk kebutuhan internal perusahaan.
-                  </p>
-
-                  <div className="grid md:grid-cols-2 gap-3.5">
-                    {[
-                      { icon: "fa-solid fa-cart-shopping", text: "Sistem Aqiqah (penjualan, produksi, pengiriman)" },
-                      { icon: "fa-solid fa-chart-line", text: "Accounting & Reporting Module" },
-                      { icon: "fa-solid fa-industry", text: "Manufacturing & Work Order System" },
-                      { icon: "fa-solid fa-file-pdf", text: "Laporan PDF kompleks menggunakan FPDF" },
-                      { icon: "fa-solid fa-desktop", text: "Web interface & dashboard design" },
-                      { icon: "fa-solid fa-swatchbook", text: "Desain poster untuk kebutuhan internal" },
-                    ].map(({ icon, text }) => (
-                      <div key={text} className="flex items-start gap-3 text-sm text-slate-400 group/item">
-                        <div className="w-7 h-7 rounded-lg bg-cyan-500/8 border border-cyan-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                          <i className={`${icon} text-[10px] text-cyan-500/60`} />
-                        </div>
-                        <span className="leading-relaxed pt-1">{text}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══════════════════════════════════════════════════════════
-            PROJECTS
-        ══════════════════════════════════════════════════════════ */}
-        <section id="projects" className="relative z-10 px-6 lg:px-8 py-32">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-4">
-              <SectionLabel text="Portofolio" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                My{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Projects
-                </span>
-              </h2>
-            </div>
-            <p className="text-center text-slate-500 mb-16 max-w-xl mx-auto text-sm leading-relaxed">
-              Berikut adalah proyek-proyek yang telah saya kerjakan, baik selama sekolah maupun saat PKL.
-            </p>
-
-            {/* School Projects */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-sky-500/8 border border-sky-500/20 text-sky-400 text-xs font-semibold px-4 py-2 rounded-full">
-                  <i className="fa-solid fa-school text-[11px]" />
-                  School Projects
-                </div>
-                <div className="flex-1 h-px bg-white/[0.04]" />
-              </div>
-              <div className="grid md:grid-cols-2 gap-6">
-                {schoolProjects.map((p, i) => (
-                  <ProjectCard key={p.title} project={p} index={i} />
-                ))}
-              </div>
-            </div>
-
-            {/* Internship Projects */}
-            <div>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-cyan-500/8 border border-cyan-500/20 text-cyan-400 text-xs font-semibold px-4 py-2 rounded-full">
-                  <i className="fa-solid fa-briefcase text-[11px]" />
-                  PKL Projects — PT. Inovasi Inti Digital
-                </div>
-                <div className="flex-1 h-px bg-white/[0.04]" />
-              </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {internProjects.map((p, i) => (
-                  <ProjectCard key={p.title} project={p} index={i} />
-                ))}
-              </div>
+            {/* Education Cards */}
+            <div className="grid md:grid-cols-1 gap-6">
+              {education.map((edu, i) => (
+                <EducationCard key={edu.school} edu={edu} index={i} />
+              ))}
             </div>
           </div>
         </section>
@@ -941,17 +606,12 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             CERTIFICATIONS
         ══════════════════════════════════════════════════════════ */}
-        <section id="certifications" className="relative z-10 px-6 lg:px-8 py-32">
+        <section id="certifications" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-gray-800/50 to-transparent">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Pelatihan & Sertifikasi" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                Professional{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Certifications
-                </span>
-              </h2>
-              <p className="text-slate-500 mt-4 max-w-xl mx-auto text-sm">
+              <h2 className="text-5xl font-bold tracking-tight text-white">Professional Certifications</h2>
+              <p className="text-gray-300 mt-4 max-w-xl mx-auto text-base">
                 Sertifikasi dan pelatihan profesional dari berbagai institusi terpercaya.
               </p>
             </div>
@@ -970,36 +630,177 @@ export default function Home() {
         </section>
 
         {/* ══════════════════════════════════════════════════════════
+            SKILLS
+        ══════════════════════════════════════════════════════════ */}
+        <section id="skills" className="relative z-10 px-6 lg:px-8 py-32">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <SectionLabel text="Keahlian" />
+              <h2 className="text-5xl font-bold tracking-tight text-white">Tech Stack</h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+              {Object.entries(skills).map(([category, { faIcon, items }]) => (
+                <div
+                  key={category}
+                  className="skill-card group bg-gray-800/50 border border-gray-700 rounded-lg p-6 hover:shadow-md hover:shadow-black/30 hover:border-gray-600 transition-all duration-300"
+                >
+                  <div className="skill-icon-wrap w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-5 group-hover:bg-amber-500/30 transition-all duration-300">
+                    <i className={`${faIcon} text-amber-400 text-base`} />
+                  </div>
+                  <h3 className="font-semibold text-sm text-white mb-4 leading-snug">{category}</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {items.map((skill) => (
+                      <span
+                        key={skill}
+                        className="bg-gray-700/50 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-600 group-hover:border-gray-500 group-hover:bg-gray-700 transition-all duration-200"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            EXPERIENCE
+        ══════════════════════════════════════════════════════════ */}
+        <section id="experience" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-gray-800/30">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-16">
+              <SectionLabel text="Pengalaman" />
+              <h2 className="text-5xl font-bold tracking-tight text-white">My Experience</h2>
+            </div>
+
+            {/* Timeline */}
+            <div className="relative">
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-700" />
+
+              <div className="relative pl-16">
+                {/* Timeline dot */}
+                <div className="absolute left-[18px] top-9 w-4 h-4 rounded-full bg-amber-500 border-4 border-gray-900 shadow-lg shadow-amber-500/50" />
+
+                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300">
+                  <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-1">Web Developer Intern</h3>
+                      <div className="flex items-center gap-2 text-stone-300 font-semibold text-sm">
+                        <i className="fa-solid fa-building text-xs" />
+                        PT. Inovasi Inti Digital
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 bg-gray-700/50 border border-gray-600 text-gray-300 text-sm font-semibold px-4 py-2 rounded-full">
+                      <i className="fa-regular fa-clock text-xs" />
+                      10 Bulan PKL
+                    </div>
+                  </div>
+
+                  <p className="text-gray-300 leading-relaxed mb-6 text-base">
+                    Mengembangkan berbagai sistem bisnis berbasis CodeIgniter seperti modul accounting,
+                    purchasing, manufaktur, pengiriman, dan reporting PDF operasional perusahaan. Selain
+                    pengembangan backend, juga terlibat dalam pembuatan desain tampilan website dan desain
+                    poster untuk kebutuhan internal perusahaan.
+                  </p>
+
+                  <div className="grid md:grid-cols-2 gap-3.5">
+                    {[
+                      { icon: "fa-solid fa-cart-shopping", text: "Sistem Aqiqah (penjualan, produksi, pengiriman)" },
+                      { icon: "fa-solid fa-chart-line", text: "Accounting & Reporting Module" },
+                      { icon: "fa-solid fa-industry", text: "Manufacturing & Work Order System" },
+                      { icon: "fa-solid fa-file-pdf", text: "Laporan PDF kompleks menggunakan FPDF" },
+                      { icon: "fa-solid fa-desktop", text: "Web interface & dashboard design" },
+                      { icon: "fa-solid fa-swatchbook", text: "Desain poster untuk kebutuhan internal" },
+                    ].map(({ icon, text }) => (
+                      <div key={text} className="flex items-start gap-3 text-sm text-stone-400 group/item">
+                        <div className="w-7 h-7 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 mt-0.5">
+                          <i className={`${icon} text-xs text-stone-600`} />
+                        </div>
+                        <span className="leading-relaxed pt-1">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
+            PROJECTS
+        ══════════════════════════════════════════════════════════ */}
+        <section id="projects" className="relative z-10 px-6 lg:px-8 py-32">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <SectionLabel text="Portofolio" />
+              <h2 className="text-5xl font-bold tracking-tight text-white">My Projects</h2>
+              <p className="text-gray-300 mt-4 max-w-xl mx-auto text-base leading-relaxed">
+                Berikut adalah proyek-proyek yang telah saya kerjakan, baik selama sekolah maupun saat PKL.
+              </p>
+            </div>
+
+            {/* School Projects */}
+            <div className="mb-16">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-2 bg-blue-500/20 border border-blue-600 text-blue-400 text-xs font-semibold px-4 py-2 rounded-full">
+                  <i className="fa-solid fa-school text-sm" />
+                  School Projects
+                </div>
+                <div className="flex-1 h-px bg-gray-700" />
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {schoolProjects.map((p, i) => (
+                  <ProjectCard key={p.title} project={p} index={i} />
+                ))}
+              </div>
+            </div>
+
+            {/* Internship Projects */}
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="flex items-center gap-2 bg-amber-500/20 border border-amber-600 text-amber-400 text-xs font-semibold px-4 py-2 rounded-full">
+                  <i className="fa-solid fa-briefcase text-sm" />
+                  PKL Projects — PT. Inovasi Inti Digital
+                </div>
+                <div className="flex-1 h-px bg-gray-700" />
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {internProjects.map((p, i) => (
+                  <ProjectCard key={p.title} project={p} index={i} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══════════════════════════════════════════════════════════
             DESIGN WORKS
         ══════════════════════════════════════════════════════════ */}
         <section id="design" className="relative z-10 px-6 lg:px-8 py-32">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Design Works" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                Design{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Gallery
-                </span>
-              </h2>
-              <p className="text-slate-500 mt-4 max-w-xl mx-auto text-sm">
+              <h2 className="text-5xl font-bold tracking-tight text-stone-200">Design Gallery</h2>
+              <p className="text-stone-300 mt-4 max-w-xl mx-auto text-base">
                 Selain backend development, saya juga mengerjakan desain web interface dan poster untuk kebutuhan internal perusahaan.
               </p>
             </div>
 
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <i className="fa-solid fa-palette text-sky-400 text-xs" />
+                <i className="fa-solid fa-palette text-amber-400 text-sm" />
                 <h3 className="text-base font-semibold text-white">Poster and Web Design</h3>
               </div>
-              <p className="text-slate-500 text-sm mb-6 pl-5">
+              <p className="text-gray-300 text-sm mb-6 pl-5">
                 Poster kebutuhan internal perusahaan, visual promosi dan informasi operasional.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {["hqc.png", "2.png", "10.png", "25.png"].map((image) => (
                   <div
                     key={image}
-                    className="group relative w-full aspect-[3/4] rounded-2xl overflow-hidden border border-white/[0.07] hover:border-cyan-500/25 transition-all duration-300"
+                    className="group relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-gray-700 hover:shadow-lg hover:shadow-black/50 transition-all duration-300"
                   >
                     <Image
                       src={`/images/${image}`}
@@ -1007,7 +808,7 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 ))}
               </div>
@@ -1018,17 +819,12 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             CONTACT
         ══════════════════════════════════════════════════════════ */}
-        <section id="contact" className="relative z-10 px-6 lg:px-8 py-32">
+        <section id="contact" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-gray-800/50">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Hubungi Saya" />
-              <h2 className="font-display text-5xl font-black tracking-tight">
-                Let&apos;s Work{" "}
-                <span className="bg-gradient-to-r from-cyan-400 to-sky-400 bg-clip-text text-transparent">
-                  Together
-                </span>
-              </h2>
-              <p className="text-slate-400 mt-4 max-w-xl mx-auto text-[15px] leading-relaxed">
+              <h2 className="text-5xl font-bold tracking-tight text-white">Let&apos;s Work Together</h2>
+              <p className="text-gray-300 mt-4 max-w-xl mx-auto text-base leading-relaxed">
                 Saya terbuka untuk peluang kerja sama, project freelance, atau diskusi teknologi. Jangan ragu untuk menghubungi saya!
               </p>
             </div>
@@ -1039,18 +835,18 @@ export default function Home() {
                 <a
                   key={c.label}
                   href={c.href}
-                  className="group flex items-center gap-4 bg-[#030e1c] border border-white/[0.05] rounded-2xl p-5 hover:border-cyan-500/25 hover:-translate-y-1 transition-all duration-300"
+                  className="group flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-5 hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-cyan-500/8 border border-cyan-500/15 flex items-center justify-center shrink-0 group-hover:bg-cyan-500/15 group-hover:border-cyan-500/30 transition-all duration-300">
-                    <i className={`${c.faIcon} text-cyan-400 text-base`} />
+                  <div className="w-12 h-12 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-500/30 transition-all duration-300">
+                    <i className={`${c.faIcon} text-amber-400 text-base`} />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-[10px] text-slate-500 font-semibold uppercase tracking-[0.15em] mb-0.5">{c.label}</div>
-                    <div className="text-sm text-slate-300 font-medium group-hover:text-cyan-400 transition-colors duration-200 truncate">
+                    <div className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-0.5">{c.label}</div>
+                    <div className="text-sm text-gray-300 font-medium group-hover:text-white transition-colors duration-200 truncate">
                       {c.value}
                     </div>
                   </div>
-                  <i className="fa-solid fa-arrow-right ml-auto text-slate-600 text-xs group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300" />
+                  <i className="fa-solid fa-arrow-right ml-auto text-gray-600 text-xs group-hover:text-gray-400 group-hover:translate-x-1 transition-all duration-300" />
                 </a>
               ))}
             </div>
@@ -1060,31 +856,25 @@ export default function Home() {
               <a
                 href="/CV_ Nofrion_Ridho.pdf"
                 download="CV_Nofrion_Ridho.pdf"
-                className="group inline-flex items-center gap-3 relative overflow-hidden bg-gradient-to-r from-cyan-400 to-sky-400 text-[#010b17] px-10 py-4 rounded-xl font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-lg shadow-cyan-500/20"
+                className="group inline-flex items-center gap-3 relative overflow-hidden bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300"
               >
                 <i className="fa-solid fa-download relative z-10" />
                 <span className="relative z-10">Download CV</span>
-                <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </a>
             </div>
           </div>
         </section>
 
         {/* ── FOOTER ── */}
-        <footer className="relative z-10 border-t border-white/[0.04] px-6 lg:px-8 py-8">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-slate-600 text-sm">
+        <footer className="relative z-10 border-t border-gray-700 px-6 lg:px-8 py-8 bg-gray-900/50">
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
             <div className="flex items-center gap-2.5">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
-                <span className="font-display text-[10px] font-black text-[#010b17]">N</span>
-              </div>
               <span>
-                © 2025{" "}
-                <span className="text-cyan-400 font-semibold">Nofrion Ridho</span>.
-                All rights reserved.
+                © 2025 <span className="text-white font-semibold">Nofrion Ridho</span>. All rights reserved.
               </span>
             </div>
             <div className="flex items-center gap-1.5">
-              <i className="fa-brands fa-react text-xs text-slate-700" />
+              <i className="fa-brands fa-react text-xs text-gray-500" />
               <span>Built with Next.js &amp; Tailwind CSS</span>
             </div>
           </div>
