@@ -121,7 +121,7 @@ const education = [
   {
     school: "SMK Negeri 1 Cibinong",
     major: "Sistem Informasi Jaringan dan Aplikasi (SIJA)",
-    description: "Selama masa pendidikan kejuruan, saya mengembangkan keahlian yang komprehensif di bidang pengembangan perangkat lunak dan infrastruktur IT. Saya mendapatkan pengalaman praktis dalam membangun aplikasi web menggunakan PHP, Laravel, JavaScript, CSS, dan Bootstrap. Selain pemrograman, saya mendalami DevOps dan operasi sistem dengan meraih sertifikasi dalam Administrasi Sistem Linux dan Docker, serta mempelajari otomatisasi server menggunakan Ansible. Di samping itu, saya juga mempelajari jaringan komputer dengan fokus pada konfigurasi dan manajemen infrastruktur menggunakan perangkat MikroTik dan Cisco.",
+    description: "Selama masa pendidikan, saya mengembangkan keahlian yang komprehensif di bidang pengembangan perangkat lunak dan infrastruktur IT. Saya mendapatkan pengalaman praktis dalam membangun aplikasi web menggunakan PHP, Laravel, JavaScript, CSS, dan Bootstrap. Selain pemrograman, saya mendalami DevOps dan operasi sistem dengan meraih sertifikasi dalam Administrasi Sistem Linux dan Docker, serta mempelajari otomatisasi server menggunakan Ansible. Di samping itu, saya juga mempelajari jaringan komputer dengan fokus pada konfigurasi dan manajemen infrastruktur menggunakan perangkat MikroTik dan Cisco.",
     icon: "fa-solid fa-school",
     years: "2022 - 2026",
     skills: ["PHP", "Laravel", "CodeIgniter", "JavaScript", "Bootstrap", "MySQL", "Linux", "Docker", "Ansible", "MikroTik", "Cisco"],
@@ -140,7 +140,7 @@ const contacts = [
 function SectionLabel({ text }: { text: string }) {
   return (
     <div className="text-center mb-6">
-      <span className="text-gray-400 text-xs font-semibold tracking-widest uppercase">{text}</span>
+      <span className="text-blue-400 text-xs font-semibold tracking-widest uppercase">{text}</span>
     </div>
   );
 }
@@ -163,10 +163,9 @@ function ProjectCard({
   return (
     <div
       onClick={handleCardClick}
-      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-black/50 hover:border-gray-600 transition-all duration-300 cursor-pointer"
+      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-lg hover:shadow-blue-900/30 hover:border-blue-800/60 transition-all duration-300 cursor-pointer"
       style={{ animationDelay: `${index * 100}ms` }}
     >
-      {/* Image area */}
       <div className="relative h-48 bg-gray-700/50 overflow-hidden">
         {!imageError && project.image ? (
           <Image
@@ -184,8 +183,6 @@ function ProjectCard({
             </div>
           </div>
         )}
-
-        {/* Badge */}
         <div className="absolute top-3 right-3 bg-gray-900/80 border border-gray-700 text-gray-300 text-[10px] font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
           <i className={`${project.badgeIcon} text-[9px]`} />
           {project.badge}
@@ -201,7 +198,7 @@ function ProjectCard({
           {project.tags.map((t) => (
             <span
               key={t}
-              className="bg-gray-700/50 border border-gray-600 text-gray-300 px-2.5 py-0.5 rounded text-[11px] font-medium"
+              className="bg-blue-950/60 border border-blue-800/50 text-blue-300 px-2.5 py-0.5 rounded text-[11px] font-medium"
             >
               {t}
             </span>
@@ -221,40 +218,34 @@ function EducationCard({
 }) {
   return (
     <div
-      className={`group bg-gradient-to-br from-amber-500/10 to-transparent border border-amber-600/50 rounded-lg p-8 hover:shadow-lg hover:shadow-amber-500/20 hover:border-amber-500 transition-all duration-300 ${
+      className={`group bg-gradient-to-br from-blue-900/20 to-transparent border border-blue-800/40 rounded-lg p-8 hover:shadow-lg hover:shadow-blue-900/30 hover:border-blue-700/60 transition-all duration-300 ${
         index % 2 === 0 ? "md:col-span-1" : "md:col-span-1"
       }`}
     >
-      {/* School & Major */}
       <div className="flex items-start justify-between mb-6 gap-4">
         <div className="flex-1">
           <h3 className="text-xl font-bold text-white mb-1">{edu.school}</h3>
-          <p className="text-amber-400 font-semibold text-sm">{edu.major}</p>
+          <p className="text-blue-400 font-semibold text-sm">{edu.major}</p>
         </div>
-        <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-500/30 transition-all duration-300">
-          <i className={`${edu.icon} text-amber-400 text-base`} />
+        <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-700/50 flex items-center justify-center shrink-0 group-hover:bg-blue-600/30 transition-all duration-300">
+          <i className={`${edu.icon} text-blue-400 text-base`} />
         </div>
       </div>
 
-      {/* Years */}
       <div className="flex items-center gap-2 text-gray-300 text-sm font-semibold mb-6 pb-6 border-b border-gray-700/50">
-        <i className="fa-regular fa-calendar text-amber-400 text-xs" />
+        <i className="fa-regular fa-calendar text-blue-400 text-xs" />
         {edu.years}
       </div>
 
-      {/* Description */}
-      <p className="text-gray-300 leading-relaxed text-base mb-6">
-        {edu.description}
-      </p>
+      <p className="text-gray-300 leading-relaxed text-base mb-6">{edu.description}</p>
 
-      {/* Skills */}
       <div>
         <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Keahlian yang dikuasai</p>
         <div className="flex flex-wrap gap-2">
           {edu.skills.map((skill) => (
             <span
               key={skill}
-              className="bg-amber-500/15 text-amber-300 text-xs px-3 py-1.5 rounded-full border border-amber-600/40 group-hover:border-amber-500/60 group-hover:bg-amber-500/25 transition-all duration-200"
+              className="bg-blue-600/15 text-blue-300 text-xs px-3 py-1.5 rounded-full border border-blue-700/40 group-hover:border-blue-600/60 group-hover:bg-blue-600/25 transition-all duration-200"
             >
               {skill}
             </span>
@@ -274,24 +265,20 @@ function CertificationCard({
 }) {
   return (
     <div
-      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300 p-6"
+      className="group relative bg-gray-800/50 border border-gray-700 rounded-lg overflow-hidden hover:shadow-md hover:shadow-blue-900/30 hover:border-blue-800/50 transition-all duration-300 p-6"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="relative z-10">
-        {/* Icon */}
-        <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center mb-4 group-hover:bg-amber-500/30 transition-colors duration-300">
-          <i className={`${cert.icon} text-amber-400 text-base`} />
+        <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-700/50 flex items-center justify-center mb-4 group-hover:bg-blue-600/30 transition-colors duration-300">
+          <i className={`${cert.icon} text-blue-400 text-base`} />
         </div>
 
-        {/* Title */}
         <h3 className="text-base font-bold mb-1 group-hover:text-white transition-colors duration-300 leading-snug text-white">
           {cert.title}
         </h3>
 
-        {/* Issuer */}
         <p className="text-gray-400 text-sm font-medium mb-3">{cert.issuer}</p>
 
-        {/* Details */}
         <div className="space-y-2 text-sm text-gray-400 mb-4">
           <div className="flex items-center gap-2">
             <i className="fa-solid fa-calendar text-gray-500 text-xs w-4" />
@@ -359,56 +346,77 @@ export default function Home() {
 
   return (
     <>
-      {/* Font Awesome CDN */}
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         crossOrigin="anonymous"
       />
-      {/* Google Fonts — Inter */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800&display=swap"
         rel="stylesheet"
       />
 
       <style>{`
         body, html { font-family: 'Inter', sans-serif; }
 
-        .nav-pill::after {
+        /* Subtle dot-grid background for hero */
+        .hero-grid-bg {
+          background-image: radial-gradient(circle, rgba(59,130,246,0.10) 1px, transparent 1px);
+          background-size: 32px 32px;
+        }
+
+        /* Glow ring on profile photo */
+        .photo-glow {
+          box-shadow: 0 0 0 1px rgba(59,130,246,0.25), 0 0 40px rgba(37,99,235,0.18);
+        }
+
+        /* Animated shimmer on "Available" badge */
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+        .badge-shimmer {
+          background: linear-gradient(90deg, rgba(59,130,246,0.15) 25%, rgba(96,165,250,0.28) 50%, rgba(59,130,246,0.15) 75%);
+          background-size: 200% auto;
+          animation: shimmer 3s linear infinite;
+        }
+
+        .nav-pill.active {
+          color: #60a5fa;
+        }
+        .nav-pill.active::after {
           content: '';
           position: absolute;
           bottom: -4px;
           left: 0;
           right: 0;
           height: 2px;
-          background: #1f2937;
-          opacity: 0;
-          transition: opacity 0.2s;
+          background: #3b82f6;
         }
-        .nav-pill.active::after { opacity: 1; }
       `}</style>
 
-      <main className="min-h-screen bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900 text-white overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <main
+        className="min-h-screen bg-gradient-to-b from-gray-950 via-slate-950 to-blue-950/30 text-white overflow-x-hidden"
+        style={{ fontFamily: "'Inter', sans-serif" }}
+      >
 
         {/* ── NAVBAR ── */}
         <nav
           className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
             scrolled
-              ? "bg-gray-950/80 backdrop-blur-md border-b border-gray-700 shadow-lg"
+              ? "bg-gray-950/85 backdrop-blur-md border-b border-blue-900/40 shadow-lg shadow-blue-950/20"
               : "bg-transparent"
           }`}
         >
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-            {/* Logo */}
             <button onClick={() => scrollTo("home")} className="flex items-center gap-2 group">
               <span className="font-bold text-xl">
-                <span className="text-amber-700">Nofrion</span>
+                <span className="text-blue-400">Nofrion</span>
               </span>
             </button>
 
-            {/* Desktop nav */}
             <ul className="hidden md:flex items-center gap-1 text-sm list-none">
               {navItems.map((item) => (
                 <li key={item.id}>
@@ -416,7 +424,7 @@ export default function Home() {
                     onClick={() => scrollTo(item.id)}
                     className={`relative nav-pill px-4 py-2 rounded transition-colors duration-200 font-medium text-sm ${
                       activeSection === item.id
-                        ? "text-amber-400 active"
+                        ? "text-blue-400 active"
                         : "text-gray-300 hover:text-white"
                     }`}
                   >
@@ -426,16 +434,14 @@ export default function Home() {
               ))}
             </ul>
 
-            {/* Desktop CTA */}
             <button
               onClick={() => scrollTo("contact")}
-              className="hidden md:flex items-center gap-2 relative overflow-hidden bg-amber-600 text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300"
+              className="hidden md:flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-blue-500 transition-all duration-300"
             >
               <i className="fa-solid fa-paper-plane text-xs" />
               <span>Hire Me</span>
             </button>
 
-            {/* Mobile hamburger */}
             <button
               className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
               onClick={() => setMenuOpen(!menuOpen)}
@@ -446,15 +452,14 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Mobile menu */}
-          <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-80 border-b border-gray-700" : "max-h-0"}`}>
-            <div className="px-6 pb-4 space-y-1 bg-gray-800/50">
+          <div className={`md:hidden transition-all duration-300 overflow-hidden ${menuOpen ? "max-h-80 border-b border-blue-900/40" : "max-h-0"}`}>
+            <div className="px-6 pb-4 space-y-1 bg-gray-900/70">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollTo(item.id)}
                   className={`block w-full text-left px-4 py-2.5 rounded text-sm font-medium transition-colors ${
-                    activeSection === item.id ? "text-amber-400 bg-amber-900/20" : "text-gray-300 hover:text-white"
+                    activeSection === item.id ? "text-blue-400 bg-blue-950/40" : "text-gray-300 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -465,57 +470,96 @@ export default function Home() {
         </nav>
 
         {/* ══════════════════════════════════════════════════════════
-            HERO
+            HERO — redesigned
         ══════════════════════════════════════════════════════════ */}
-        <section id="home" className="relative z-10 min-h-screen flex items-center px-6 lg:px-8 pt-28 pb-20">
-          <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+        <section
+          id="home"
+          className="relative z-10 min-h-screen flex items-center px-6 lg:px-8 pt-28 pb-20 hero-grid-bg overflow-hidden"
+        >
+          {/* Ambient background glow blobs */}
+          <div className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-blue-700/10 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-blue-900/15 blur-3xl" />
 
-            {/* Left content */}
+          <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center relative z-10">
+
+            {/* ── Left content ── */}
             <div>
-              {/* Status badge */}
+              {/* Available badge */}
               <div
-                className={`mb-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-amber-500/50 bg-amber-500/10 text-amber-400 text-sm transition-all duration-700 ${
+                className={`mb-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-blue-500/40 badge-shimmer text-blue-300 text-sm transition-all duration-700 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
               >
                 <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
                 </span>
                 Available for work
               </div>
 
-              {/* Name */}
+              {/* Name — large display */}
               <h1
-                className={`text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-tight transition-all duration-700 delay-100 ${
+                className={`text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] mb-5 transition-all duration-700 delay-100 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
                 <span className="text-white block">Nofrion</span>
-                <span className="text-white block">Ridho</span>
+                <span
+                  className="block"
+                  style={{
+                    background: "linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #1d4ed8 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  Ridho
+                </span>
               </h1>
 
-              {/* Role */}
+              {/* Role badge row */}
               <div
-                className={`mb-6 transition-all duration-700 delay-200 ${
+                className={`flex items-center gap-3 mb-6 transition-all duration-700 delay-200 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
-                <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-amber-400 uppercase">
-                  Backend &amp; Fullstack Developer
+                <span className="flex items-center gap-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full">
+                  <i className="fa-solid fa-code text-blue-400" />
+                  Backend Developer
+                </span>
+                <span className="text-gray-600 text-xs">+</span>
+                <span className="flex items-center gap-2 bg-blue-950/60 border border-blue-800/60 text-blue-300 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full">
+                  <i className="fa-solid fa-layer-group text-blue-400" />
+                  Fullstack
                 </span>
               </div>
 
               {/* Description */}
               <p
-                className={`max-w-lg text-gray-300 text-base leading-relaxed mb-10 transition-all duration-700 delay-300 ${
+                className={`max-w-lg text-gray-400 text-base leading-relaxed mb-4 transition-all duration-700 delay-300 ${
                   loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                 }`}
               >
                 Fresh graduate dari SMK Jurusan Sistem Informasi Jaringan & Aplikasi dengan passion
                 pada pengembangan web. Berpengalaman dengan{" "}
-                <span className="text-amber-400 font-semibold">Laravel</span>, <span className="text-amber-400 font-semibold">CodeIgniter</span>, dan <span className="text-amber-400 font-semibold">PHP</span>.
+                <span className="text-blue-300 font-semibold">Laravel</span>,{" "}
+                <span className="text-blue-300 font-semibold">CodeIgniter</span>, dan{" "}
+                <span className="text-blue-300 font-semibold">PHP</span>.
               </p>
+
+              {/* Mini tech stack indicator */}
+              <div
+                className={`flex items-center gap-2 mb-10 transition-all duration-700 delay-[350ms] ${
+                  loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                }`}
+              >
+                <span className="text-gray-500 text-xs">Tech Stack:</span>
+                {["Laravel", "CodeIgniter", "MySQL", "Next.js", "Linux"].map((tech) => (
+                  <span key={tech} className="text-gray-400 text-xs bg-gray-800/70 border border-gray-700 px-2.5 py-1 rounded-md">
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
               {/* Buttons */}
               <div
@@ -525,14 +569,15 @@ export default function Home() {
               >
                 <button
                   onClick={() => scrollTo("projects")}
-                  className="group relative overflow-hidden bg-amber-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300 flex items-center gap-2"
+                  className="group relative overflow-hidden bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-500 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-blue-900/40"
                 >
                   <i className="fa-solid fa-folder-open text-sm" />
                   <span>Lihat Project</span>
+                  <i className="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
                 </button>
                 <button
                   onClick={() => scrollTo("contact")}
-                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
+                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-blue-800/60 text-blue-300 hover:border-blue-600 hover:bg-blue-950/50 transition-all duration-300 flex items-center gap-2"
                 >
                   <i className="fa-solid fa-message text-sm" />
                   Contact Me
@@ -540,7 +585,7 @@ export default function Home() {
                 <a
                   href="/CV_ Nofrion_Ridho.pdf"
                   download="CV_Nofrion_Ridho.pdf"
-                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-800 transition-all duration-300 flex items-center gap-2"
+                  className="px-6 py-3 rounded-lg font-semibold text-sm border border-gray-700 text-gray-300 hover:border-gray-600 hover:bg-gray-800/60 transition-all duration-300 flex items-center gap-2"
                 >
                   <i className="fa-solid fa-download text-sm" />
                   Download CV
@@ -548,27 +593,63 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Profile image */}
+            {/* ── Right: Profile image + floating stats ── */}
             <div
               className={`relative flex items-center justify-center transition-all duration-1000 delay-500 ${
                 loaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
               }`}
             >
+              {/* Decorative ring behind photo */}
+              <div className="absolute w-72 h-72 rounded-2xl border border-blue-700/20 rotate-3 scale-105" />
+              <div className="absolute w-72 h-72 rounded-2xl border border-blue-600/10 -rotate-2 scale-110" />
+
               {/* Profile picture */}
-              <div className="relative w-64 h-64 rounded-2xl overflow-hidden border border-gray-700 shadow-lg shadow-black/50">
+              <div className="relative w-64 h-64 rounded-2xl overflow-hidden photo-glow z-10">
                 <Image
                   src="/images/foto_diri3.jpeg"
                   alt="Foto Profil Nofrion Ridho"
                   fill
                   className="object-cover"
                 />
+                {/* Subtle blue tint overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent" />
+              </div>
+
+              {/* Floating stat card — top right */}
+              <div className="absolute -top-4 -right-4 bg-gray-900/90 backdrop-blur-sm border border-blue-800/50 rounded-xl px-4 py-3 z-20 shadow-lg shadow-blue-950/40">
+                <div className="text-xs text-gray-400 mb-0.5">Projects Selesai</div>
+                <div className="text-xl font-bold text-white flex items-end gap-1">
+                  5+
+                  <i className="fa-solid fa-code-branch text-blue-400 text-sm mb-0.5" />
+                </div>
+              </div>
+
+              {/* Floating stat card — bottom left */}
+              <div className="absolute -bottom-4 -left-4 bg-gray-900/90 backdrop-blur-sm border border-blue-800/50 rounded-xl px-4 py-3 z-20 shadow-lg shadow-blue-950/40">
+                <div className="text-xs text-gray-400 mb-0.5">PKL di</div>
+                <div className="text-sm font-bold text-white leading-snug">
+                  PT. Inovasi Inti
+                  <br />
+                  <span className="text-blue-400">10 Bulan</span>
+                </div>
+              </div>
+
+              {/* Floating cert badge — bottom right */}
+              <div className="absolute -bottom-2 -right-2 bg-blue-600/90 backdrop-blur-sm border border-blue-500/60 rounded-xl px-3 py-2.5 z-20 shadow-lg shadow-blue-800/40">
+                <div className="flex items-center gap-2">
+                  <i className="fa-solid fa-certificate text-white text-sm" />
+                  <div>
+                    <div className="text-[10px] text-blue-100 font-medium leading-none mb-0.5">Bersertifikat</div>
+                    <div className="text-xs text-white font-bold">5 Sertifikasi</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* ── STATS BAR ── */}
-        <div className="relative z-10 border-y border-gray-700 bg-gray-800/50 py-10 px-6">
+        <div className="relative z-10 border-y border-blue-900/30 bg-blue-950/20 py-10 px-6">
           <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
             {[
               { value: "5+", label: "Projects Selesai", icon: "fa-solid fa-code-branch" },
@@ -576,7 +657,7 @@ export default function Home() {
               { value: "5+", label: "Teknologi", icon: "fa-solid fa-layer-group" },
             ].map((s) => (
               <div key={s.label} className="group">
-                <i className={`${s.icon} text-amber-400 text-sm mb-3 block`} />
+                <i className={`${s.icon} text-blue-400 text-sm mb-3 block`} />
                 <div className="text-3xl font-bold text-white">{s.value}</div>
                 <div className="text-xs text-gray-400 mt-1.5 tracking-wide uppercase">{s.label}</div>
               </div>
@@ -587,14 +668,12 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             EDUCATION
         ══════════════════════════════════════════════════════════ */}
-        <section id="education" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-gray-800/50 to-transparent">
+        <section id="education" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-blue-950/10 to-transparent">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Pendidikan" />
               <h2 className="text-5xl font-bold tracking-tight text-white">My Education</h2>
             </div>
-
-            {/* Education Cards */}
             <div className="grid md:grid-cols-1 gap-6">
               {education.map((edu, i) => (
                 <EducationCard key={edu.school} edu={edu} index={i} />
@@ -606,7 +685,7 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             CERTIFICATIONS
         ══════════════════════════════════════════════════════════ */}
-        <section id="certifications" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-gray-800/50 to-transparent">
+        <section id="certifications" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-blue-950/10 to-transparent">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Pelatihan & Sertifikasi" />
@@ -643,17 +722,17 @@ export default function Home() {
               {Object.entries(skills).map(([category, { faIcon, items }]) => (
                 <div
                   key={category}
-                  className="skill-card group bg-gray-800/50 border border-gray-700 rounded-lg p-6 hover:shadow-md hover:shadow-black/30 hover:border-gray-600 transition-all duration-300"
+                  className="group bg-gray-800/50 border border-gray-700 rounded-lg p-6 hover:shadow-md hover:shadow-blue-900/20 hover:border-blue-800/50 transition-all duration-300"
                 >
-                  <div className="skill-icon-wrap w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center mb-5 group-hover:bg-amber-500/30 transition-all duration-300">
-                    <i className={`${faIcon} text-amber-400 text-base`} />
+                  <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-700/50 flex items-center justify-center mb-5 group-hover:bg-blue-600/30 transition-all duration-300">
+                    <i className={`${faIcon} text-blue-400 text-base`} />
                   </div>
                   <h3 className="font-semibold text-sm text-white mb-4 leading-snug">{category}</h3>
                   <div className="flex flex-wrap gap-1.5">
                     {items.map((skill) => (
                       <span
                         key={skill}
-                        className="bg-gray-700/50 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-600 group-hover:border-gray-500 group-hover:bg-gray-700 transition-all duration-200"
+                        className="bg-gray-700/50 text-gray-300 text-xs px-2.5 py-1 rounded border border-gray-600 group-hover:border-blue-800/60 group-hover:bg-blue-950/30 transition-all duration-200"
                       >
                         {skill}
                       </span>
@@ -668,31 +747,29 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             EXPERIENCE
         ══════════════════════════════════════════════════════════ */}
-        <section id="experience" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-gray-800/30">
+        <section id="experience" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-blue-950/15">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Pengalaman" />
               <h2 className="text-5xl font-bold tracking-tight text-white">My Experience</h2>
             </div>
 
-            {/* Timeline */}
             <div className="relative">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-gray-700" />
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-blue-900/50" />
 
               <div className="relative pl-16">
-                {/* Timeline dot */}
-                <div className="absolute left-[18px] top-9 w-4 h-4 rounded-full bg-amber-500 border-4 border-gray-900 shadow-lg shadow-amber-500/50" />
+                <div className="absolute left-[18px] top-9 w-4 h-4 rounded-full bg-blue-500 border-4 border-gray-950 shadow-lg shadow-blue-500/50" />
 
-                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300">
+                <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-8 hover:shadow-md hover:shadow-blue-900/20 hover:border-blue-800/50 transition-all duration-300">
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                     <div>
                       <h3 className="text-xl font-bold text-white mb-1">Web Developer Intern</h3>
-                      <div className="flex items-center gap-2 text-stone-300 font-semibold text-sm">
+                      <div className="flex items-center gap-2 text-blue-300 font-semibold text-sm">
                         <i className="fa-solid fa-building text-xs" />
                         PT. Inovasi Inti Digital
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 bg-gray-700/50 border border-gray-600 text-gray-300 text-sm font-semibold px-4 py-2 rounded-full">
+                    <div className="flex items-center gap-2 bg-blue-950/50 border border-blue-800/50 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full">
                       <i className="fa-regular fa-clock text-xs" />
                       10 Bulan PKL
                     </div>
@@ -714,9 +791,9 @@ export default function Home() {
                       { icon: "fa-solid fa-desktop", text: "Web interface & dashboard design" },
                       { icon: "fa-solid fa-swatchbook", text: "Desain poster untuk kebutuhan internal" },
                     ].map(({ icon, text }) => (
-                      <div key={text} className="flex items-start gap-3 text-sm text-stone-400 group/item">
-                        <div className="w-7 h-7 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 mt-0.5">
-                          <i className={`${icon} text-xs text-stone-600`} />
+                      <div key={text} className="flex items-start gap-3 text-sm text-gray-400 group/item">
+                        <div className="w-7 h-7 rounded-lg bg-blue-950/50 border border-blue-800/40 flex items-center justify-center shrink-0 mt-0.5">
+                          <i className={`${icon} text-xs text-blue-400`} />
                         </div>
                         <span className="leading-relaxed pt-1">{text}</span>
                       </div>
@@ -741,10 +818,9 @@ export default function Home() {
               </p>
             </div>
 
-            {/* School Projects */}
             <div className="mb-16">
               <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-blue-500/20 border border-blue-600 text-blue-400 text-xs font-semibold px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-blue-950/50 border border-blue-800/60 text-blue-300 text-xs font-semibold px-4 py-2 rounded-full">
                   <i className="fa-solid fa-school text-sm" />
                   School Projects
                 </div>
@@ -757,10 +833,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Internship Projects */}
             <div>
               <div className="flex items-center gap-4 mb-8">
-                <div className="flex items-center gap-2 bg-amber-500/20 border border-amber-600 text-amber-400 text-xs font-semibold px-4 py-2 rounded-full">
+                <div className="flex items-center gap-2 bg-blue-950/50 border border-blue-800/60 text-blue-300 text-xs font-semibold px-4 py-2 rounded-full">
                   <i className="fa-solid fa-briefcase text-sm" />
                   PKL Projects — PT. Inovasi Inti Digital
                 </div>
@@ -782,15 +857,15 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Design Works" />
-              <h2 className="text-5xl font-bold tracking-tight text-stone-200">Design Gallery</h2>
-              <p className="text-stone-300 mt-4 max-w-xl mx-auto text-base">
+              <h2 className="text-5xl font-bold tracking-tight text-white">Design Gallery</h2>
+              <p className="text-gray-300 mt-4 max-w-xl mx-auto text-base">
                 Selain backend development, saya juga mengerjakan desain web interface dan poster untuk kebutuhan internal perusahaan.
               </p>
             </div>
 
             <div>
               <div className="flex items-center gap-3 mb-3">
-                <i className="fa-solid fa-palette text-amber-400 text-sm" />
+                <i className="fa-solid fa-palette text-blue-400 text-sm" />
                 <h3 className="text-base font-semibold text-white">Poster and Web Design</h3>
               </div>
               <p className="text-gray-300 text-sm mb-6 pl-5">
@@ -800,7 +875,7 @@ export default function Home() {
                 {["hqc.png", "2.png", "10.png", "25.png"].map((image) => (
                   <div
                     key={image}
-                    className="group relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-gray-700 hover:shadow-lg hover:shadow-black/50 transition-all duration-300"
+                    className="group relative w-full aspect-[3/4] rounded-lg overflow-hidden border border-gray-700 hover:shadow-lg hover:shadow-blue-900/20 transition-all duration-300"
                   >
                     <Image
                       src={`/images/${image}`}
@@ -808,7 +883,7 @@ export default function Home() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-blue-950/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                 ))}
               </div>
@@ -819,7 +894,7 @@ export default function Home() {
         {/* ══════════════════════════════════════════════════════════
             CONTACT
         ══════════════════════════════════════════════════════════ */}
-        <section id="contact" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-gray-800/50">
+        <section id="contact" className="relative z-10 px-6 lg:px-8 py-32 bg-gradient-to-b from-transparent to-blue-950/20">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
               <SectionLabel text="Hubungi Saya" />
@@ -829,16 +904,15 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Contact grid */}
             <div className="grid md:grid-cols-2 gap-4 mb-10">
               {contacts.map((c) => (
                 <a
                   key={c.label}
                   href={c.href}
-                  className="group flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-5 hover:shadow-md hover:shadow-black/50 hover:border-gray-600 transition-all duration-300"
+                  className="group flex items-center gap-4 bg-gray-800/50 border border-gray-700 rounded-lg p-5 hover:shadow-md hover:shadow-blue-900/20 hover:border-blue-800/50 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-amber-500/20 border border-amber-600 flex items-center justify-center shrink-0 group-hover:bg-amber-500/30 transition-all duration-300">
-                    <i className={`${c.faIcon} text-amber-400 text-base`} />
+                  <div className="w-12 h-12 rounded-lg bg-blue-600/20 border border-blue-700/50 flex items-center justify-center shrink-0 group-hover:bg-blue-600/30 transition-all duration-300">
+                    <i className={`${c.faIcon} text-blue-400 text-base`} />
                   </div>
                   <div className="min-w-0">
                     <div className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-0.5">{c.label}</div>
@@ -846,27 +920,26 @@ export default function Home() {
                       {c.value}
                     </div>
                   </div>
-                  <i className="fa-solid fa-arrow-right ml-auto text-gray-600 text-xs group-hover:text-gray-400 group-hover:translate-x-1 transition-all duration-300" />
+                  <i className="fa-solid fa-arrow-right ml-auto text-gray-600 text-xs group-hover:text-blue-400 group-hover:translate-x-1 transition-all duration-300" />
                 </a>
               ))}
             </div>
 
-            {/* Download CV */}
             <div className="text-center">
               <a
                 href="/CV_ Nofrion_Ridho.pdf"
                 download="CV_Nofrion_Ridho.pdf"
-                className="group inline-flex items-center gap-3 relative overflow-hidden bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-sm hover:bg-amber-500 transition-all duration-300"
+                className="group inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-sm hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-900/40"
               >
-                <i className="fa-solid fa-download relative z-10" />
-                <span className="relative z-10">Download CV</span>
+                <i className="fa-solid fa-download" />
+                <span>Download CV</span>
               </a>
             </div>
           </div>
         </section>
 
         {/* ── FOOTER ── */}
-        <footer className="relative z-10 border-t border-gray-700 px-6 lg:px-8 py-8 bg-gray-900/50">
+        <footer className="relative z-10 border-t border-blue-900/30 px-6 lg:px-8 py-8 bg-gray-950/50">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-gray-400 text-sm">
             <div className="flex items-center gap-2.5">
               <span>
