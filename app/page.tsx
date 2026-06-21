@@ -84,6 +84,7 @@ const certifications = [
     hours: "18 Jam Pelatihan",
     certId: "1949615850-82/TA/BLSDM.Kominfo/2024",
     icon: "fa-solid fa-chart-line",
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
   },
   {
     title: "TOEIC - Listening and Reading",
@@ -93,6 +94,7 @@ const certifications = [
     certId: "ID: 0067088056",
     icon: "fa-solid fa-language",
     isScore: true,
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
   },
   {
     title: "Docker Fundamental",
@@ -100,6 +102,7 @@ const certifications = [
     date: "Maret 2025 - Maret 2027",
     certId: "C01002-00000-36475",
     icon: "fa-brands fa-docker",
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
   },
   {
     title: "Automation with Ansible",
@@ -107,6 +110,7 @@ const certifications = [
     date: "Oktober 2025 - Oktober 2027",
     certId: "C01003-00000-41750",
     icon: "fa-solid fa-gears",
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
   },
   {
     title: "Linux System Administration",
@@ -114,6 +118,15 @@ const certifications = [
     date: "Mei 2024 - Mei 2026",
     certId: "C01001-00000-33415",
     icon: "fa-brands fa-linux",
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
+  },
+  {
+    title: "Jaringan Komputer",
+    issuer: "Badan Nasional Sertifikasi Profesi (BNSP)",
+    date: "29 April 2025",
+    certId: "J 247 00759 2026",
+    icon: "fa-solid fa-certificate",
+    previewLink: "https://drive.google.com/drive/folders/1XMZu2HwCozCMj2Vt4dREmfxyeynKAVTC?usp=drive_link",
   },
 ];
 
@@ -279,7 +292,7 @@ function CertificationCard({
 
         <p className="text-gray-400 text-sm font-medium mb-3">{cert.issuer}</p>
 
-        <div className="space-y-2 text-sm text-gray-400 mb-4">
+        <div className="space-y-2 text-sm text-gray-400">
           <div className="flex items-center gap-2">
             <i className="fa-solid fa-calendar text-gray-500 text-xs w-4" />
             <span>{cert.date}</span>
@@ -297,6 +310,17 @@ function CertificationCard({
             </div>
           )}
         </div>
+
+        {cert.previewLink && (
+          <button
+            onClick={() => window.open(cert.previewLink, "_blank")}
+            className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-blue-600/20 border border-blue-700/50 text-blue-300 rounded-lg text-sm font-medium hover:bg-blue-600/40 hover:border-blue-600/70 transition-all duration-300 group/btn"
+          >
+            <i className="fa-solid fa-eye text-xs" />
+            <span>Preview Sertifikat</span>
+            <i className="fa-solid fa-arrow-up-right text-xs opacity-0 group-hover/btn:opacity-100 transition-opacity duration-200" />
+          </button>
+        )}
       </div>
     </div>
   );
@@ -640,7 +664,7 @@ export default function Home() {
                   <i className="fa-solid fa-certificate text-white text-sm" />
                   <div>
                     <div className="text-[10px] text-blue-100 font-medium leading-none mb-0.5">Bersertifikat</div>
-                    <div className="text-xs text-white font-bold">5 Sertifikasi</div>
+                    <div className="text-xs text-white font-bold">6 Sertifikasi</div>
                   </div>
                 </div>
               </div>
